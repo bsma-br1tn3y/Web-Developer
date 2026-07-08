@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+ 
+body {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12pt;
+    background-color: #020b1f;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, #1a0a3a 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, #0a1a3a 0%, transparent 40%),
+        radial-gradient(ellipse at top, #0d1f4a 0%, #020b1f 70%);
+    color: #d39715;
+    text-align: center;
+    min-height: 100vh;
+}
+ 
+h1 {
+    color: #ffae00;
+    font-size: 29pt;
+    font-family: 'Cinzel', Georgia, Times, serif;
+    border-bottom: 2px solid rgb(255, 204, 0);
+    padding-bottom: 8px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 20px rgba(255, 174, 0, 0.6),
+        0 0 60px rgba(255, 174, 0, 0.2);
+    animation: glitch-in 0.8s ease-out both;
+    position: relative;
+}
+ 
+h1::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,220,100,0.15), transparent);
+    transform: skewX(-20deg);
+}
+h1:hover::after {
+    animation: sweep 0.7s ease-out forwards;
+}
+ 
+h2 {
+    color: #ffb700;
+    font-size: 24pt;
+    font-family: 'Cinzel', Georgia, Times, serif;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(255, 221, 0);
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+ 
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffae00, #ff6a00, #ffae00, transparent);
+    background-size: 200% 100%;
+    animation: shimmer-line 3s linear infinite;
+    margin: 2rem auto;
+    max-width: 400px;
+}
+ 
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+ 
+@keyframes color-change {
+    0%   { color: rgb(129, 78, 2); }
+    50%  { color: rgb(219, 177, 8); }
+    100% { color: rgb(255, 51, 0); }
+}
+ 
+@keyframes pulse {
+    0%   { transform: scale(1);    color: #ffbb00; text-shadow: none; }
+    50%  { transform: scale(1.05); color: #684201; text-shadow: 0 0 8px rgba(255, 107, 107, 0.8); }
+    100% { transform: scale(1);    color: #ff8800; text-shadow: none; }
+}
+ 
+@keyframes glitch-in {
+    0%   { opacity: 0; transform: skewX(-4deg) translateX(-6px); filter: blur(2px); }
+    15%  { opacity: 1; transform: skewX(3deg)  translateX(4px);  filter: blur(0); }
+    30%  {             transform: skewX(-1deg) translateX(-2px); }
+    100% { opacity: 1; transform: none; }
+}
+ 
+@keyframes shimmer-line {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+}
+ 
+@keyframes sweep {
+    0%   { left: -100%; }
+    100% { left: 150%; }
+}
+ 

@@ -1,0 +1,3 @@
+-- database: c:\Users\Lenovo\OneDrive\Apps\Python\PYTHON PRO\diary-ind-main\instance\diary.db
+
+SELECT * FROM "table-name";
